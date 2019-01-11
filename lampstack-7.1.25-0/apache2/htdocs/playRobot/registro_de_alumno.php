@@ -2,7 +2,7 @@
     <main class="registro">
       <h2>Registrar alumno</h2>
       <section id="contacto" class="contacto">
-        <form action="validar_registro.php" method="post">
+        <form class="formulario" action="validar_registro.php" method="post">
           <div class="contenedor-campos">
             <div class="campo">
               <label>Nivel al que ingresa:</label>
@@ -43,7 +43,7 @@
             </div>
             <div class="campo">
               <label>Fecha de nacimiento:</label>
-              <input type="date" name="Fecha_de_nacimiento" required>
+              <input type="date" name="fecha_de_nacimiento" required>
             </div>
             <div class="campo w-100">
               <label>Alergias:</label>

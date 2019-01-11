@@ -29,7 +29,11 @@
                   <li><a href="#">Ver lista de asistencia</a></li>
                 </ul>
               </li>
-              <li><a href="#">Colegiaturas</a></li>
+              <li><a href="#">Colegiaturas</a>
+                <ul>
+                  <li><a href="agregar_pago.php">Agregar pago</a></li>
+                </ul>
+              </li>
             </ul>
           </nav>
         </div>

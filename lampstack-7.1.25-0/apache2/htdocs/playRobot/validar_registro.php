@@ -6,7 +6,7 @@
     $nivel=$_POST['nivel'];
     $nombre=$_POST['nombre'];
     $apellido=$_POST['apellido'];
-    $Fecha_de_nacimiento=$_POST['Fecha_de_nacimiento'];
+    $fecha_de_nacimiento=$_POST['fecha_de_nacimiento'];
     $alergias=$_POST['alergias'];
     $nombre_padre=$_POST['nombre_padre'];
     $telefono_padre=$_POST['telefono_padre'];
@@ -28,8 +28,17 @@
 
     try{
       require_once('includes/funciones/bd_conexion.php');
-      $stmt = $conn->prepare("INSERT INTO lista (id_nivel, nombre_alumno, apellido_alumno, fecha_nacimiento, alergias, nombre_padre, nombre_madre, telefono_padre, telefono_madre, personas_autorizadas, autorizacion_dulces, autorizacion_video, fecha_pago) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
-      $stmt->bind_param("issssssssssss", $nivel, $nombre, $apellido, $Fecha_de_nacimiento, $alergias, $nombre_padre, $nombre_madre, $telefono_padre, $telefono_madre, $autorizadas, $dulces, $video, $fecha_de_pago);
+      $stmt = $conn->prepare("INSERT INTO referencias (referencia_de_pago) VALUES(NULL)");
+      $stmt->bind_param();
+      $stmt->execute();
+      echo " aqui";
+      $sql="SELECT * FROM referencias ORDER BY referencia_de_pago DESC LIMIT 1";
+      $resultado=$conn->query($sql);
+      while($lista = $resultado->fetch_assoc()){
+        echo " aqui".$lista['referencia_de_pago'];
+      $stmt = $conn->prepare("INSERT INTO lista (id_nivel, nombre_alumno, apellido_alumno, fecha_nacimiento, alergias, nombre_padre, nombre_madre, telefono_padre, telefono_madre, personas_autorizadas, autorizacion_dulces, autorizacion_video, fecha_pago, referencia_de_pago) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+      $stmt->bind_param("issssssssssssi", $nivel, $nombre, $apellido, $fecha_de_nacimiento, $alergias, $nombre_padre, $nombre_madre, $telefono_padre, $telefono_madre, $autorizadas, $dulces, $video, $fecha_de_pago, $lista['referencia_de_pago']);
+      }
       $stmt->execute();
       $stmt->close();
       $conn->close();
@@ -40,7 +49,7 @@
 
    <h3 class="texto">
      <br></br>
-    <?php echo ('Nombre: '). $_POST['nombre'].$_POST['apellido'];?>
+    <?php echo ('Nombre: '). $_POST['nombre'].(' ').$_POST['apellido'];?>
     <br></br>
     <?php echo ('Nivel: '). $_POST['nivel'];?>
     <br></br>

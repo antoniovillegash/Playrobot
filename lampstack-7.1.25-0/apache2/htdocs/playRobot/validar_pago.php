@@ -1,4 +1,3 @@
-
 <?php include_once'includes/templates/header.php'; ?>
 <main class="registro">
   <h2>Resumen de registro</h2>

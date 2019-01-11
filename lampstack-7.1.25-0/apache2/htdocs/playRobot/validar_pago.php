@@ -2,47 +2,17 @@
 <main class="registro">
   <h2>Resumen de registro</h2>
   <?php if(isset($_POST['submit'])):
-
-
-    $hermano=$_POST['hermano'];
-    try{
-      require_once('includes/funciones/bd_conexion.php');
-      $sql=" SELECT * ";
-      $sql.=" FROM lista ";
-      $sql.=" WHERE id_alumno=$hermano ";
-      $resultado=$conn->query($sql);
-    }catch(Exception $e){
-    echo $e->getMessage();
-    }
-
-    ?>
-
-    <div class="resultados-bd" >
-
-    <?php
-
-     while($lista = $resultado->fetch_assoc()){
-          $nombre_padre=$lista['nombre_padre'];
-          $telefono_padre=$lista['telefono_padre'];
-          $nombre_madre=$lista['nombre_madre'];
-          $telefono_madre=$lista['telefono_madre'];
-          $autorizadas=$lista['personas_autorizadas'];
-          $dulces=$lista['autorizacion_dulces'];
-          $video=$lista['autorizacion_video'];
-          $fecha_de_pago=$lista['fecha_pago'];
-     }
-
-
-    $nivel=$_POST['nivel'];
-    $nombre=$_POST['nombre'];
-    $apellido=$_POST['apellido'];
-    $fecha_de_nacimiento=$_POST['fecha_de_nacimiento'];
-    $alergias=$_POST['alergias'];
+    $tipo_de_pago=$_POST['pago'];
+    $cantidad=$_POST['pago_total'];
+    $descuento=$_POST['descuento'];
+    $fecha_de_pago=$_POST['fecha_de_pago'];
+    $referencia_de_pago=$_POST['alumno'];
+    $metodo_de_pago=$_POST['metodo_pago'];
 
     try{
       require_once('includes/funciones/bd_conexion.php');
-      $stmt = $conn->prepare("INSERT INTO lista (id_nivel, nombre_alumno, apellido_alumno, fecha_nacimiento, alergias, nombre_padre, nombre_madre, telefono_padre, telefono_madre, personas_autorizadas, autorizacion_dulces, autorizacion_video, fecha_pago) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
-      $stmt->bind_param("issssssssssss", $nivel, $nombre, $apellido, $fecha_de_nacimiento, $alergias, $nombre_padre, $nombre_madre, $telefono_padre, $telefono_madre, $autorizadas, $dulces, $video, $fecha_de_pago);
+      $stmt = $conn->prepare("INSERT INTO pagos (tipo_de_pago, cantidad, descuento, referencia_de_pago, metodo_de_pago, fecha_de_pago) VALUES(?,?,?,?,?,?)");
+      $stmt->bind_param("iddiis", $tipo_de_pago, $cantidad, $descuento, $referencia_de_pago, $metodo_de_pago, $fecha_de_pago);
       $stmt->execute();
       $stmt->close();
       $conn->close();
@@ -53,15 +23,17 @@
 
    <h3 class="texto">
      <br></br>
-    <?php echo ('Nombre: '). $_POST['nombre'].(' ').$_POST['apellido'];?>
+    <?php echo ('concepto de pago: '). $tipo_de_pago;?>
     <br></br>
-    <?php echo ('Nivel: '). $_POST['nivel'];?>
+    <?php echo ('total: '). $cantidad;?>
     <br></br>
-    <?php echo ('Id del hermano: '). $_POST['hermano'];?>
+    <?php echo ('descuento: '). $descuento;?>
     <br></br>
-    <?php echo ('Fecha de nacimiento: '). $_POST['fecha_de_nacimiento'];?>
+    <?php echo ('fecha de pago: '). $fecha_de_pago;?>
     <br></br>
-    <?php echo ('Alergias: '). $_POST['alergias'];?>
+    <?php echo ('referencia: '). $referencia_de_pago;?>
+    <br></br>
+    <?php echo ('metodo de pago: '). $metodo_de_pago;?>
     </h3>
 <form class="" action="index.php">
   <div class="enviar">
@@ -71,6 +43,7 @@
 </form>
 
 <?php endif; ?>
+
 
 </main>
     <?php include_once'includes/templates/footer.php'; ?>

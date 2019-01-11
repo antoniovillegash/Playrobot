@@ -11,7 +11,7 @@
                 <?php
                   try{
                     require_once('includes/funciones/bd_conexion.php');
-                    $sql=" SELECT referencia_de_pago, nombre_alumno, apellido_alumno ";
+                    $sql=" SELECT nombre_alumno, apellido_alumno, referencia_de_pago ";
                     $sql.=" FROM lista ";
                     $resultado=$conn->query($sql);
                   }catch(Exception $e){
@@ -31,6 +31,35 @@
                 </div>
 
               </select>
+
+            </div>
+            <div class="campo">
+              <label>Metodo de pago:</label>
+              <select class="campo" name="metodo_pago" required>
+                <?php
+                  try{
+                    require_once('includes/funciones/bd_conexion.php');
+                    $sql=" SELECT id_pago_con, metodo_pago ";
+                    $sql.=" FROM pago_con ";
+                    $resultado=$conn->query($sql);
+                  }catch(Exception $e){
+                  echo $e->getMessage();
+                  }
+                ?>
+                <div class="resultados-bd">
+                  <?php
+                    while ( $row = $resultado->fetch_array()){
+                  ?>
+                  <option value=" <?php echo $row['id_pago_con'] ?> " >
+                  <?php echo $row['metodo_pago']; ?>
+                     <?php
+                   }
+                  ?>
+
+                </div>
+
+              </select>
+
             </div>
             <div class="campo">
               <label>Concepto de pago:</label>
@@ -56,23 +85,25 @@
                   ?>
 
                 </div>
+
                 <?php
                   $conn->close();
                 ?>
               </select>
             </div>
+            <div class="campo">
+              <label>Fecha de pago:</label>
+              <input type="date" name="fecha_de_pago" required>
+            </div>
             <div class="campo w-100">
-              <label>Cantidad:</label>
-              <input type="text" name="cantidad" required>
+              <label>Pagó total de:</label>
+              <input type="text" name="pago_total" required>
             </div>
             <div class="campo">
               <label>Descuento:</label>
               <input type="text" name="descuento" required>
             </div>
-            <div class="campo">
-              <label>Fecha de pago:</label>
-              <input type="date" name="fecha_de_pago" required>
-            </div>
+
           </div>
           <div class="enviar">
             <label></label>

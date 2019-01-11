@@ -31,6 +31,7 @@
           $dulces=$lista['autorizacion_dulces'];
           $video=$lista['autorizacion_video'];
           $fecha_de_pago=$lista['fecha_pago'];
+          $referencia_de_pago=$lista['referencia_de_pago'];
      }
 
 
@@ -42,8 +43,8 @@
 
     try{
       require_once('includes/funciones/bd_conexion.php');
-      $stmt = $conn->prepare("INSERT INTO lista (id_nivel, nombre_alumno, apellido_alumno, fecha_nacimiento, alergias, nombre_padre, nombre_madre, telefono_padre, telefono_madre, personas_autorizadas, autorizacion_dulces, autorizacion_video, fecha_pago) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
-      $stmt->bind_param("issssssssssss", $nivel, $nombre, $apellido, $fecha_de_nacimiento, $alergias, $nombre_padre, $nombre_madre, $telefono_padre, $telefono_madre, $autorizadas, $dulces, $video, $fecha_de_pago);
+      $stmt = $conn->prepare("INSERT INTO lista (id_nivel, nombre_alumno, apellido_alumno, fecha_nacimiento, alergias, nombre_padre, nombre_madre, telefono_padre, telefono_madre, personas_autorizadas, autorizacion_dulces, autorizacion_video, fecha_pago, referencia_de_pago) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+      $stmt->bind_param("issssssssssssi", $nivel, $nombre, $apellido, $fecha_de_nacimiento, $alergias, $nombre_padre, $nombre_madre, $telefono_padre, $telefono_madre, $autorizadas, $dulces, $video, $fecha_de_pago, $referencia_de_pago);
       $stmt->execute();
       $stmt->close();
       $conn->close();

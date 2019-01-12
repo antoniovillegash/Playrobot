@@ -8,7 +8,6 @@
     $fecha_de_pago=$_POST['fecha_de_pago'];
     $referencia_de_pago=$_POST['alumno'];
     $metodo_de_pago=$_POST['metodo_pago'];
-
     try{
       require_once('includes/funciones/bd_conexion.php');
       $stmt = $conn->prepare("INSERT INTO pagos (tipo_de_pago, cantidad, descuento, referencia_de_pago, metodo_de_pago, fecha_de_pago) VALUES(?,?,?,?,?,?)");

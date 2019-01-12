@@ -1,7 +1,6 @@
 <?php include_once'includes/templates/header.php'; ?>
 <main class="registro">
   <?php $id_alumno=($_GET['id_alumno']);
-
   try{
     require_once('includes/funciones/bd_conexion.php');
     $sql=" SELECT * ";

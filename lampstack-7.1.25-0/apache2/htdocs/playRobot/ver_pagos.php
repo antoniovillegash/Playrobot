@@ -1,6 +1,6 @@
 <?php include_once'includes/templates/header.php'; ?>
 <main class="registro">
-  <h2>Ver alumnos</h2>
+  <h2>Ver pagos</h2>
     <br></br>
   <?php
     try{
@@ -38,11 +38,11 @@
               <li>
                 <?php echo $lista['nombre_alumno'].(' ').$lista['apellido_alumno']; ?>
             </li>
-          <form  class="alumno" action="editar_alumno.php" method="post">
+          <form class="alumno" action="index.html" method="post">
             <div class="editar">
               <label></label>
-              <input hidden type="text" name="id_alumno" value="<?php echo $id_alumno?>" >
-              <input  type="submit" name="submit" class="boton-edit" value="editar">
+
+              <input type="submit" name="editar" class="boton-edit" value="editar">
             </div>
           </form>
 

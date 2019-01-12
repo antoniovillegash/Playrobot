@@ -1,6 +1,7 @@
 <?php include_once'includes/templates/header.php'; ?>
     <main class="registro">
       <h2>Agregar hermano/a</h2>
+      <br></br>
       <section id="contacto" class="contacto">
         <form action="validar_hermano.php" method="post">
           <div class="contenedor-campos">

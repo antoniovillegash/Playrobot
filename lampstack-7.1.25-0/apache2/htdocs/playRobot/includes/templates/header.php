@@ -31,6 +31,7 @@
               </li>
               <li><a href="#">Colegiaturas</a>
                 <ul>
+                  <li><a href="ver_pagos.php">Ver pagos</a></li>
                   <li><a href="agregar_pago.php">Agregar pago</a></li>
                 </ul>
               </li>

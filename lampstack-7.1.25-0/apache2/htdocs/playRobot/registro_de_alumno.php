@@ -34,15 +34,15 @@
               </select>
             </div>
             <div class="campo">
-              <label>Nombre del alumno:</label>
+              <label>*Nombre del alumno:</label>
               <input type="text" name="nombre" required >
             </div>
             <div class="campo">
-              <label>Apellido del alumno:</label>
+              <label>*Apellido del alumno:</label>
               <input type="text" name="apellido" required>
             </div>
             <div class="campo">
-              <label>Fecha de nacimiento:</label>
+              <label>*Fecha de nacimiento:</label>
               <input type="date" name="fecha_de_nacimiento" required>
             </div>
             <div class="campo w-100">
@@ -66,23 +66,20 @@
               <input type="text" name="telefono_madre" >
             </div>
             <div class="campo">
-              <label>Personas autorizadas:</label>
-              <input type="text" name="autorizadas" >
+              <label>*Personas autorizadas:</label>
+              <input type="text" name="autorizadas" required>
             </div>
             <div class="campo">
               <label>Comer dulces:</label>
               <input type="checkbox" name="dulces" >
             </div>
             <div class="campo">
-              <label>Toma de videos/Fotos:</label>
+              <label>Toma de video:</label>
               <input type="checkbox" name="video" >
             </div>
+
             <div class="campo">
-              <label>Inscripción:</label>
-              <input type="text" name="inscripcion" >
-            </div>
-            <div class="campo">
-              <label>Fecha de pago:</label>
+              <label>*Fecha de pago:</label>
               <input type="text" name="fecha_de_pago" required>
             </div>
 

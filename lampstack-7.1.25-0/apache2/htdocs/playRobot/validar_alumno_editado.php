@@ -29,19 +29,13 @@
     }else{
       $validacion=False;
     }
+    $id_alumno=$_POST['id'];
 if($validacion==True){
-  ?><h2>Resumen de registro</h2><?php
+  ?><h2>Alumno editado</h2><?php
     try{
       require_once('includes/funciones/bd_conexion.php');
-      $stmt = $conn->prepare("INSERT INTO referencias (referencia_de_pago) VALUES(NULL)");
-      $stmt->bind_param();
-      $stmt->execute();
-      $sql="SELECT * FROM referencias ORDER BY referencia_de_pago DESC LIMIT 1";
-      $resultado=$conn->query($sql);
-      while($lista = $resultado->fetch_assoc()){
-      $stmt = $conn->prepare("INSERT INTO lista (id_nivel, nombre_alumno, apellido_alumno, fecha_nacimiento, alergias, nombre_padre, nombre_madre, telefono_padre, telefono_madre, personas_autorizadas, autorizacion_dulces, autorizacion_video, fecha_pago, referencia_de_pago) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-      $stmt->bind_param("issssssssssssi", $nivel, $nombre, $apellido, $fecha_de_nacimiento, $alergias, $nombre_padre, $nombre_madre, $telefono_padre, $telefono_madre, $autorizadas, $dulces, $video, $fecha_de_pago, $lista['referencia_de_pago']);
-      }
+      $sql = "UPDATE lista SET id_nivel=$nivel, nombre_alumno='$nombre', apellido_alumno='$apellido', fecha_nacimiento='$fecha_de_nacimiento', alergias='$alergias', nombre_padre='$nombre_padre', nombre_madre='$nombre_madre', telefono_padre='$telefono_padre', telefono_madre='$telefono_madre', personas_autorizadas='$autorizadas', autorizacion_dulces='$dulces', autorizacion_video='$video', fecha_pago='$fecha_de_pago' WHERE id_alumno=$id_alumno ";
+      $stmt=$conn->prepare($sql);
       $stmt->execute();
       $stmt->close();
       $conn->close();

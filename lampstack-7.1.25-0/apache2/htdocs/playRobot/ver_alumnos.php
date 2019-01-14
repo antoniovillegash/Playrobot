@@ -27,17 +27,15 @@
         <a href="alumno.php?id_alumno=<?php echo $lista['id_alumno']  ?>">
           <nav class="resultados-bd">
             <ul>
-              <li>
-                  <?php echo $lista['id_alumno'];
+              <h3 class="texto">
+                  <?php echo "Alumno: ".$lista['nombre_alumno'].(' ').$lista['apellido_alumno']; ?>
+                  <br>
+                  <?php echo "ID: ".$lista['id_alumno'];?>
+                  <br>
+                  <?php echo "Nivel: ".$lista['nombre_nivel']; ?>
+                  <br>
 
-                    ?>
-              </li>
-              <li>
-                  <?php echo $lista['nombre_nivel']; ?>
-              </li>
-              <li>
-                <?php echo $lista['nombre_alumno'].(' ').$lista['apellido_alumno']; ?>
-            </li>
+                <br>
           <form  class="alumno" action="editar_alumno.php" method="post">
             <div class="editar">
               <label></label>
@@ -46,7 +44,7 @@
             </div>
           </form>
 
-
+            </h3>
             </ul>
 
           </nav>

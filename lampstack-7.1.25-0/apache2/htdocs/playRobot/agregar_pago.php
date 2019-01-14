@@ -67,7 +67,7 @@
                 <?php
                   try{
                     require_once('includes/funciones/bd_conexion.php');
-                    $sql=" SELECT id_pago, nombre_pago";
+                    $sql=" SELECT id_pago, nombre_tipo_pago";
                     $sql.=" FROM tipo_de_pago ";
                     $resultado=$conn->query($sql);
                   }catch(Exception $e){
@@ -79,7 +79,7 @@
                     while ( $row = $resultado->fetch_array()){
                   ?>
                   <option value=" <?php echo $row['id_pago'] ?> " >
-                  <?php echo $row['nombre_pago']; ?>
+                  <?php echo $row['nombre_tipo_pago']; ?>
                      <?php
                    }
                   ?>

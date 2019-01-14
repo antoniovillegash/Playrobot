@@ -1,11 +1,6 @@
 <?php
 session_start();
-echo "user ". $_SESSION['usuario'];
-if (!isset($_SESSION)) {
-echo " no se ha logeado";
-}
- ?>
-
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -23,22 +26,22 @@
       </div>
     </header>
     <main class="login">
-      <h2>Inicio de sesión</h2>
+      <h2>Inicio de sesión</h2><br><br>
       <section id="contacto" class="contacto">
-        <form action="#">
+        <form action="validar_login.php" method="post">
           <div class="contenedor-campos">
             <div class="campo w-100">
 
-              <input type="email" name="nivel" placeholder="Usuario" >
+              <input type="text" name="usuario" placeholder="Usuario" >
             </div>
             <div class="campo w-100">
 
-              <input type="password" name="nombre" placeholder="Contraseña">
+              <input type="password" name="contrasena" placeholder="Contraseña">
             </div>
           </div>
           <div class="log">
 
-            <input type="submit" class="boton" value="iniciar">
+            <input type="submit" class="boton" name="submit" value="iniciar">
           </div>
         </form>
       </section>

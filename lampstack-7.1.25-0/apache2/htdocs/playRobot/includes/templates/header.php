@@ -1,9 +1,9 @@
-<?php
-session_start();
-echo "user ". $_SESSION['usuario'];
-if (!isset($_SESSION)) {
-echo " no se ha logeado";
+<?php session_start();
+if (!isset($_SESSION['nombre_usuario'])) {
+ header("location:login.php");
+  die;
 }
+
  ?>
 
 <!DOCTYPE html>
@@ -25,26 +25,26 @@ echo " no se ha logeado";
             </div>
             <ul>
               <li><a href="index.php">Inicio</a>
-              <li><a href="#">Alumnos</a>
+              <li><a>Alumnos</a>
                 <ul>
                   <li><a href="ver_alumnos.php">Ver alumnos</a></li>
                   <li><a href="registro_de_alumno.php">Registrar alumno</a></li>
                   <li><a href="agregar_hermanos.php">Agregar hermano/a</a></li>
                 </ul>
               </li>
-              <li><a href="#">Asistencias</a>
+              <li><a>Asistencias</a>
                 <ul>
                   <li><a href="ver_asistencias.php">Ver lista de asistencia</a></li>
                   <li><a href="agregar_asistencia.php">Agregar asistencia</a></li>
                 </ul>
               </li>
-              <li><a href="#">Colegiaturas</a>
+              <li><a>Colegiaturas</a>
                 <ul>
                   <li><a href="ver_pagos.php">Ver pagos</a></li>
                   <li><a href="agregar_pago.php">Agregar pago</a></li>
                 </ul>
               </li>
-              <li><a href="<?php session_destroy();?>">Cerrar sesion</a>
+              <li><a href="cerrar_sesion.php">Cerrar sesion</a>
             </ul>
           </nav>
         </div>

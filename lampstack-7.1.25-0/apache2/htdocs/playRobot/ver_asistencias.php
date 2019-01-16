@@ -10,6 +10,8 @@
       $sql.= "LEFT JOIN lista ON lista.id_alumno=asistencias.id_del_alumno ";
       $sql.=" LEFT JOIN nivel ";
       $sql.=" ON lista.id_nivel = nivel.id_nivel ";
+      $sql.=" LEFT JOIN horarios ";
+      $sql.=" ON asistencias.horario = horarios.id_horario ";
       $sql.=" ORDER BY id_asistencia ASC ";
       $resultado=$conn->query($sql);
     }catch(Exception $e){

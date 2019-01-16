@@ -24,7 +24,7 @@
       $id_pago=0;
      while($lista = $resultado->fetch_assoc()){
        ?>
-
+      <?php if($id_pago!=$lista['id_pagos']):?>
         <br></br>
 
         <a >
@@ -41,12 +41,12 @@
           <?php echo"Pagó total de: $". $lista['cantidad']; ?>
           <br>
           <?php echo"Descuento: $". $lista['descuento']; ?>
-            <br> <?php echo $lista['id_pagos']; ?>
-        <h3 class="texto"><?php if($id_pago==$lista['id_pagos']){echo "hermano - ";} echo $lista['nombre_alumno'].(' ').$lista['apellido_alumno']; ?></h3>
+            <br> <?php echo "N° de pago: ".$lista['id_pagos']; ?>
+        <h3 class="texto"><?php echo $lista['nombre_alumno'].(' ').$lista['apellido_alumno']; ?></h3>
           <form  class="alumno" action="eliminar_pago.php" method="post">
             <div class="editar">
               <label></label>
-              <?php $id_pago=$lista['id_pagos'];?>
+
               <input hidden type="text" name="id_pago" value="<?php echo $id_pago?>" >
               <input type="submit" name="editar" class="boton-edit" value="eliminar">
             </div>
@@ -57,6 +57,9 @@
 
           </nav>
           </a>
+          <?php
+          endif;
+          $id_pago=$lista['id_pagos'];?>
        <?php
      }
     ?>

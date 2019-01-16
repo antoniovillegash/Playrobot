@@ -32,6 +32,7 @@ font-weight: 400;
 color: var(--gris-claro);
 text-align: left;
 text-decoration: none;
+padding: 1rem;
 }
 
 
@@ -244,9 +245,9 @@ flex: 0 0 100%;
 border-radius: .6rem;
 background-color: var(--verde);
 cursor: pointer;
--webkit-box-shadow: 10px 10px 31px -8px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 31px -8px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 31px -8px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 15px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 15px -8px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 15px -8px rgba(0,0,0,0.75);
 }
 .resultados-bd nav ul li{
 margin-top: 1rem;
@@ -269,9 +270,8 @@ align-content: flex-end;
   font-family: 'Muli',sans-serif;
   background-color: hsl(6, 59%, 56%);
   padding: .3rem .3rem;
-  margin-top: 1rem;
 margin-right: 2rem;
-  display: inline-block;
+  display: flex;
   color: white;
   text-decoration:none;
   border-radius: .5rem;

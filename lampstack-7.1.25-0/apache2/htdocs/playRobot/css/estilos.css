@@ -92,9 +92,8 @@ nav ul li:hover{
 .registro{
   max-width: 996px;
   margin: 0 auto;
-  background-color: white;
+  background-color: #eee;
   padding: 3rem;
-  border-radius: 1rem;
   margin-top: 5rem;
   -webkit-box-shadow: 10px 10px 19px -1px rgba(0,0,0,0.48);
 -moz-box-shadow: 10px 10px 19px -1px rgba(0,0,0,0.48);
@@ -106,7 +105,6 @@ box-shadow: 10px 10px 19px -1px rgba(0,0,0,0.48);
   margin: 0 auto;
   background-color: white;
   padding: 3rem;
-  border-radius: 1rem;
   margin-top: 5rem;
   -webkit-box-shadow: 10px 10px 19px -1px rgba(0,0,0,0.48);
 -moz-box-shadow: 10px 10px 19px -1px rgba(0,0,0,0.48);
@@ -115,9 +113,12 @@ box-shadow: 10px 10px 19px -1px rgba(0,0,0,0.48);
 main h2{
   color: var(--azul-oscuro);
   font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
 }
  form.formulario{
   padding: 2rem;
+  background-color: #eee;
 }
 @media (min-width:768px){
 form.formulario{
@@ -140,6 +141,7 @@ form.formulario{
 }
 .campo input{
   color: var(--gris-oscuro);
+  background-color: white;
   font-size: 1rem;
   padding: 1rem;
   flex: 1;
@@ -152,6 +154,7 @@ box-shadow: inset 0px 0px 4px 0px rgba(36,78,79,0.51);
 }
 .campo select{
   color: var(--gris-oscuro);
+  background-color: white;
   font-size: 1rem;
   padding: 1rem;
   flex: 1;
@@ -162,6 +165,7 @@ box-shadow: inset 0px 0px 4px 0px rgba(36,78,79,0.51);
 -moz-box-shadow: inset 0px 0px 4px 0px rgba(36,78,79,0.51);
 box-shadow: inset 0px 0px 4px 0px rgba(36,78,79,0.51);
 }
+
 .campo textarea{
   color: var(--gris-oscuro);
   padding: 1rem;
@@ -210,9 +214,8 @@ box-shadow: inset 0px 0px 4px 0px rgba(36,78,79,0.51);
 .login{
   max-width: 25rem;
   margin: 0 auto;
-  background-color: white;
+  background-color: #eee;
   padding: 3rem;
-  border-radius: 1rem;
   margin-top: 7rem;
   margin-bottom: 7rem;
   -webkit-box-shadow: 10px 10px 19px -1px rgba(0,0,0,0.48);
@@ -242,8 +245,7 @@ flex: 0 0 100%;
 
 }
 .resultados-bd nav ul:hover{
-border-radius: .6rem;
-background-color: var(--verde);
+background-color: white;
 cursor: pointer;
 -webkit-box-shadow: 10px 10px 15px -8px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 15px -8px rgba(0,0,0,0.75);
@@ -271,7 +273,7 @@ align-content: flex-end;
   background-color: hsl(6, 59%, 56%);
   padding: .3rem .3rem;
 margin-right: 2rem;
-  display: flex;
+  display: inline-block;
   color: white;
   text-decoration:none;
   border-radius: .5rem;
@@ -287,4 +289,9 @@ a{
   text-decoration: none;
   font-weight: 400;
   color: var(--gris-oscuro);
+}
+hr {
+border: 0;
+height: 2px;
+background: var(--azul-claro);
 }

@@ -4,7 +4,8 @@
 
   <?php include_once'includes/templates/header.php'; ?>
 
-    <?php session_destroy();?>
+    <?php session_destroy();
+      header("location:login.php");?>
 
       <main>
         <div class="registro ">

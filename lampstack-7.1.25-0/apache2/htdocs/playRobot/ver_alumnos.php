@@ -1,6 +1,6 @@
 <?php include_once'includes/templates/header.php'; ?>
 <main class="registro">
-  <h2>Ver alumnos</h2>
+  <h2>alumnos</h2>
     <br></br>
   <?php
     try{

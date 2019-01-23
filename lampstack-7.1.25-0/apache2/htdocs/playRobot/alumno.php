@@ -41,8 +41,6 @@
         <?php echo ('autorización: ').('Dulces ').$lista['autorizacion_dulces'].(', Video ').$lista['autorizacion_video'];?>
         <br></br>
         <?php echo ('Fecha de pago: '). $lista['fecha_pago'];?>
-        <br></br>
-        <?php echo ('Inscripción: '). $lista['inscripcion'];?>
       </h3>
      <?php
    }

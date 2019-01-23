@@ -69,14 +69,23 @@
                 ?>
               </select>
             </div>
+            <br></br>
             <div class="campo w-100">
               <label>Fecha de asistencia:</label>
               <input type="date" name="fecha_de_asistencia" required>
 
-          <div class="enviar">
-            <label></label>
-            <input type="submit" name="submit" class="boton" value="Registrar">
-          </div>
+
+            </div>
+            <div class="campo w-100">
+              <input hidden>
+
+
+            </div>
+              </div>
+            <div class="enviar">
+              <label></label>
+              <input type="submit" name="submit" class="boton" value="Registrar">
+            </div>
         </form>
       </section>
     </main>
